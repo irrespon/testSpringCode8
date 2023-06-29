@@ -18,7 +18,8 @@ public class LoginController {
     }
 
     @GetMapping("/")
-    public String viewLog(){
+    public String viewLog(Model model){
+        model.addAttribute("increment", loginProcessor.getLoginCountService().getCount());
         return "login.html";
     }
 
