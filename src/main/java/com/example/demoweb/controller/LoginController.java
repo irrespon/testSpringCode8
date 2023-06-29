@@ -28,10 +28,11 @@ public class LoginController {
         loginProcessor.setPassword(loginUser.getPassword());
         if(loginProcessor.result()) {
             model.addAttribute("message","good");
+            return "redirect:/main";
         }
-        else {
-            model.addAttribute("message","failed");
-        }
+
+        model.addAttribute("message","failed");
+
         return "login.html";
     }
 }
